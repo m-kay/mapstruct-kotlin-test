@@ -5,7 +5,7 @@ import org.mapstruct.Mapping
 import org.mapstruct.Mappings
 
 @Mapper
-abstract class TestMapper {
+abstract class UserMapper {
 
     abstract fun mapUser(userEntity: UserEntity) : User
 
@@ -16,11 +16,9 @@ abstract class TestMapper {
 
     @Mappings(value = [
         Mapping(target = "address.street", source = "addressEntity.street"),
-        Mapping(target = "address.city", source = "addressEntity.city"),
-        Mapping(target = "address.special", source = "special"),
-        Mapping(target = "special", source = "special")
+        Mapping(target = "address.city", source = "addressEntity.city")
     ])
-    abstract fun mapUserWithAddress(userEntity: UserEntity, addressEntity: AddressEntity, special: String) : User
+    abstract fun mapUserWithAddress(userEntity: UserEntity, addressEntity: AddressEntity) : User
 
     @Mappings(value = [
         Mapping(target = "street", source = "addressEntity.street"),
@@ -28,4 +26,13 @@ abstract class TestMapper {
         Mapping(target = "special", source = "special")
     ])
     abstract fun mapAddressWithSpecial(addressEntity: AddressEntity, special: String) : Address
+
+
+    @Mappings(value = [
+        Mapping(target = "address.street", source = "addressEntity.street"),
+        Mapping(target = "address.city", source = "addressEntity.city"),
+        Mapping(target = "address.special", source = "special"),
+        Mapping(target = "special", source = "special")
+    ])
+    abstract fun mapUserWithAddress(userEntity: UserEntity, addressEntity: AddressEntity, special: String) : User
 }
