@@ -26,13 +26,13 @@ abstract class UserMapper {
         Mapping(target = "special", source = "special")
     ])
     abstract fun mapAddressWithSpecial(addressEntity: AddressEntity, special: String) : Address
-
-
-    @Mappings(value = [
-        Mapping(target = "address.street", source = "addressEntity.street"),
-        Mapping(target = "address.city", source = "addressEntity.city"),
-        Mapping(target = "address.special", source = "special"),
-        Mapping(target = "special", source = "special")
-    ])
-    abstract fun mapUserWithAddress(userEntity: UserEntity, addressEntity: AddressEntity, special: String) : User
+//
+//
+//    @Mappings(value = [
+//        Mapping(target = "address.street", source = "addressEntity.street"),
+//        Mapping(target = "address.city", source = "addressEntity.city"),
+//        Mapping(target = "address.special", source = "special"),
+//        Mapping(target = "special", source = "special")
+//    ])
+//    abstract fun mapUserWithAddress(userEntity: UserEntity, addressEntity: AddressEntity, special: String) : User
 }
